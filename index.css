@@ -21,11 +21,29 @@ body {
     background: ivory;
 }
 
-.logo {
-    font-size: 2em;
-    text-align: left;
+.navbar {
+    display: flex;
+    justify-content: space-between;
     padding: 20px;
-    color: midnightblue;
+    background-color: midnightblue;
+    color: white;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 2em;
+}
+
+.navbar div {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
 }
 
 .center {
