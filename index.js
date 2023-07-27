@@ -57,5 +57,13 @@ function startTypeWriterAnimationOn(textElement) {
 }
 
 window.onload = function () {
+    var menuToggle = document.querySelector(".menu-toggle")
+    var navbarMenu = document.querySelector(".navbar-menu")
+
+    menuToggle.addEventListener("click", function () {
+        menuToggle.classList.toggle("menu-down")
+        navbarMenu.classList.toggle("menu-down")
+    })
+
     startTypeWriterAnimationOn(document.querySelector(".description"));
 };

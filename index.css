@@ -21,31 +21,6 @@ body {
     background: ivory;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: midnightblue;
-    color: white;
-    align-items: center;
-}
-
-.navbar .logo {
-    font-size: 2em;
-}
-
-.navbar div {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-}
-
 .center {
     display: flex;
     flex-direction: column;
@@ -84,4 +59,56 @@ body {
     justify-content: center;
     align-items: center;
     color: black;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: midnightblue;
+    color: white;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 2em;
+}
+
+.navbar-button {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-menu.menu-down {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow: hidden;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+    }
 }
