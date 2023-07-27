@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantiq</title>
+    <style>
+     @font-face {
+       font-family: 'FuturaPT-DemiBold';
+       src: url('https://db.onlinewebfonts.com/t/98efa5745977879929f262b460749fc5.eot');
+       src: url('https://db.onlinewebfonts.com/t/98efa5745977879929f262b460749fc5.eot?#iefix') format('embedded-opentype'),
+       url('https://db.onlinewebfonts.com/t/98efa5745977879929f262b460749fc5.woff2') format('woff2'),
+       url('https://db.onlinewebfonts.com/t/98efa5745977879929f262b460749fc5.woff') format('woff'),
+       url('https://db.onlinewebfonts.com/t/98efa5745977879929f262b460749fc5.ttf') format('truetype'),
+       url('https://db.onlinewebfonts.com/t/98efa5745977879929f262b460749fc5.svg#FuturaPT-DemiBold') format('svg');
+     }
+
+     html, body {
+       height: 100%;
+       margin: 0;
+       padding: 0;
+       /* font-family: Arial, sans-serif; */
+       font-family: 'FuturaPT-DemiBold', Arial, sans-serif;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       background: ivory;
+     }
+
+     .logo {
+       font-size: 2em;
+       text-align: left;
+       padding: 20px;
+       color: midnightblue;
+     }
+
+     .center {
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       flex-grow: 1;
+       text-align: center;
+       max-width: 75vw;
+       margin: 0 auto;
+     }
+
+     .tagline {
+       font-size: 2.5em;
+       color: black;
+     }
+
+     .description {
+      font-size: 1.2em;
+     }
+
+     .cta-button {
+       margin: 30px auto 0;
+       background-color: midnightblue;
+       border: none;
+       color: white;
+       padding: 15px 32px;
+       text-align: center;
+       text-decoration: none;
+       font-size: 1.2rem;
+       cursor: pointer;
+       max-width: 300px;
+       font-family: 'FuturaPT-DemiBold', Arial, sans-serif;
+     }
+
+     .footer {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       color: black;
+     }
+    </style>
+	  <script>
+      function typeWriterAnimation(textElement, texts) {
+          var typeSpeed = 40;
+          var blinkSpeed = 600;
+          var initialBlinks = 3;
+
+          var cursor = "\u23B8"
+          var txt = cursor + texts[0] + cursor;
+          textElement.textContent = "";
+
+          var chars = txt.split("");
+          var charElements = chars.map((c) => {
+            let element = document.createElement('span');
+            element.textContent = c;
+            element.style.opacity = 0;
+            textElement.appendChild(element)
+            return element;
+          });
+
+          function blink(numberOfBlinks, charElement, continuation) {
+            function on() {
+              charElement.style.opacity = 1;
+              setTimeout(off, blinkSpeed)
+            }
+
+            function off() {
+              charElement.style.opacity = 0;
+              numberOfBlinks--;
+              if (numberOfBlinks > 0) {
+                setTimeout(on, blinkSpeed);
+              } else if (continuation) {
+                continuation()
+              }
+            }
+            charElement.textContent = cursor;
+            on()
+          };
+
+          function typeWriter(i) {
+            if (i < charElements.length - 1) {
+              charElements[i].textContent = txt[i]
+              charElements[i].style.opacity = 1;
+              setTimeout(() => typeWriter(i + 1), typeSpeed);
+            } else {
+              blink(5, charElements.at(-1), next);
+            }
+          };
+
+          function next() {
+            typeWriterAnimation(textElement, [...texts.slice(1), texts.at(0)])
+          }
+
+          blink(1, charElements[1], () => { typeWriter(1) });
+        };
+
+      window.onload = function() {
+        var texts = ["Nous parlons votre langage.",
+                     "Nos experts vous offrent des solutions clé en main."]
+        typeWriterAnimation(document.querySelector(".description"), texts);
+      };
+    </script>
+  </head>
+  <body>
+    <div class="logo">SEMANTIQ</div>
+    <div class="center">
+      <h2 class="tagline">
+        Solutions logicielles sur mesure
+      </h2>
+      <p class="description">
+      </p>
+      <button class="cta-button">Écrivez nous</button>
+    </div>
+    <div class="footer">&copy; 2023 SEMANTIQ</div>
+  </body>
+</html>
