@@ -10,6 +10,7 @@
 
 html,
 body {
+    width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -20,27 +21,46 @@ body {
     background: ivory;
 }
 
+.full-section {
+    width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+span.semantiq {
+    font-weight: bold;
+    font-family: 'FuturaPT-DemiBold', Arial, sans-serif;
+}
+
 .logo > a {
     text-decoration: none;
     color: inherit;
+}
+
+.downarrow {
+    margin-top: 4rem;
+    font-size: 4rem;
 }
 
 .content {
     font-family: Helvetica;
     text-align: justify;
     max-width: 768px;
+    width: 75vw;
     margin: 0 auto;
 }
 
-.center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 1;
-    text-align: center;
-    max-width: 75vw;
-    margin: 0 auto;
-}
 
 .tagline {
     font-size: 3.2rem;
@@ -79,7 +99,6 @@ body {
 .navbar {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2rem;
     padding: 20px;
     background-color: midnightblue;
     color: white;
@@ -101,10 +120,6 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-    body {
-        padding-top: 6rem;
-    }
-
     .tagline {
         font-size: 2.6rem;
     }
@@ -119,6 +134,7 @@ body {
 
     .navbar {
         display: flex;
+        margin-bottom: 2rem;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
