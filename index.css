@@ -13,12 +13,23 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    /* font-family: Arial, sans-serif; */
     font-family: 'FuturaPT-DemiBold', Arial, sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background: ivory;
+}
+
+.logo > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.content {
+    font-family: Helvetica;
+    text-align: justify;
+    max-width: 768px;
+    margin: 0 auto;
 }
 
 .center {
@@ -68,6 +79,7 @@ body {
 .navbar {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 2rem;
     padding: 20px;
     background-color: midnightblue;
     color: white;
@@ -95,6 +107,10 @@ body {
 
     .typewriter {
         font-size: 1.6rem;
+    }
+
+    .content {
+        max-width: 500px;
     }
 
     .navbar {
