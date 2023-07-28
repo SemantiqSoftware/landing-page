@@ -101,6 +101,10 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+    body {
+        padding-top: 6rem;
+    }
+
     .tagline {
         font-size: 2.6rem;
     }
