@@ -36,7 +36,9 @@ body {
     color: black;
 }
 
-.description {
+.typewriter {
+    height: 2.5em;
+    overflow: visible;
     font-size: 1.2em;
 }
 
@@ -90,6 +92,10 @@ body {
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
     }
 
     .navbar-menu {

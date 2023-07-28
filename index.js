@@ -65,5 +65,5 @@ window.onload = function () {
         navbarMenu.classList.toggle("menu-down")
     })
 
-    startTypeWriterAnimationOn(document.querySelector(".description"));
+    startTypeWriterAnimationOn(document.querySelector(".typewriter"));
 };
