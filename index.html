@@ -12,11 +12,10 @@
       <div class="logo">SEMANTIQ</div>
       <div class="menu-toggle">☰</div>
       <div class="navbar-menu">
-        <a class="navbar-button" href="#">Accueil</a>
         <a class="navbar-button" href="#">Services</a>
         <a class="navbar-button" href="#">À propos</a>
         <a class="navbar-button" href="#">Nous contacter</a>
-        <a class="navbar-button" href="en/index.html">🌐 En</a>
+        <a class="navbar-button" href="/en">🌐 En</a>
       </div>
     </nav>
     <div class="center">
@@ -29,8 +28,15 @@
         Nous nous adaptons à votre équipe.
         Des solutions durables et de qualité.
       </p>
-      <button class="cta-button">Écrivez nous</button>
+      <button class="cta-button"
+              onclick="location.href='mailto:info@semantiq.software';">
+        Écrivez nous
+      </button>
     </div>
-    <div class="footer">&copy; 2023 SEMANTIQ</div>
+    <div class="footer">
+      &copy; 2023 SEMANTIQ
+      <br />
+      info@semantiq.software
+    </div>
   </body>
 </html>

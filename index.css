@@ -32,14 +32,14 @@ body {
 }
 
 .tagline {
-    font-size: 2.5rem;
+    font-size: 3.2rem;
     color: black;
 }
 
 .typewriter {
     height: 2.5rem;
     overflow: visible;
-    font-size: 1.2rem;
+    font-size: 2.2rem;
 }
 
 .cta-button {
@@ -47,6 +47,7 @@ body {
     background-color: midnightblue;
     border: none;
     color: white;
+    margin-top: 2rem;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -61,6 +62,7 @@ body {
     justify-content: center;
     align-items: center;
     color: black;
+    text-align: center;
 }
 
 .navbar {
@@ -87,6 +89,14 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+    .tagline {
+        font-size: 2.6rem;
+    }
+
+    .typewriter {
+        font-size: 1.6rem;
+    }
+
     .navbar {
         display: flex;
         flex-wrap: wrap;
