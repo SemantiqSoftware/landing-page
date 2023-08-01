@@ -166,6 +166,19 @@ semantiq {
         padding: 0 2em 0 2em;
     }
 
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .typewriter {
+        opacity: 0;
+        padding-top: 3rem;
+        height: 8rem;
+        overflow: visible;
+        font-size: 1.5rem;
+    }
+
     section p {
         font-size: 1.2rem;
         text-align: justify;

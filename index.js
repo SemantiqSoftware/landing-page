@@ -104,6 +104,7 @@ function initScroller() {
     }
 
     function scrollTo(target) {
+        console.log(target);
         animating = true;
         target.scrollIntoView({behavior: 'smooth', alignToTop: true})
         setTimeout(() => {
