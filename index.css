@@ -35,15 +35,20 @@ section {
     text-align: center;
 }
 
-.urgent {
+.top-message {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 10px;
     width: 100%;
-    background: orangered;
+    background: gray;
     color: white;
     text-align: center;
+}
+
+.top-message a {
+    text-decoration: none;
+    color: white;
 }
 
 p {
@@ -68,11 +73,6 @@ ol {
     margin-left: 60px;
 }
 
-.urgent a {
-    text-decoration: none;
-    color: white;
-}
-
 span.semantiq {
     font-weight: bold;
     font-family: 'FuturaPT-DemiBold', Arial, sans-serif;
@@ -93,10 +93,10 @@ span.semantiq {
     font-size: 1.3rem;
 }
 
-
 .tagline {
     font-size: 3.2rem;
     color: black;
+    margin-bottom: 2rem;
 }
 
 .typewriter {
@@ -166,7 +166,8 @@ footer {
     }
 
     .content {
-        max-width: 500px;
+        max-width: 600px;
+        width: 85vw;
         text-align: left;
         font-size: 1rem;
     }
@@ -183,7 +184,7 @@ footer {
         height: 40px;
     }
 
-    .urgent {
+    .top-message {
         /* 80px = 40px height + 20px padding top+bottom */
         margin-top: 80px;
     }
@@ -206,6 +207,6 @@ footer {
     }
 
     ol {
-        margin-left: 30px;
+        margin-left: 60px;
     }
 }
