@@ -57,6 +57,54 @@ function startTypeWriterAnimationOn(textElement) {
     typeWriterAnimation(textElement, texts);
 }
 
+function initScroller() {
+    const counterThreshold = 5;
+    const resetDuration = 1000;
+    const sections = document.querySelectorAll("section");
+
+    let animating = false;
+    let counter = 0;
+    let sectionIndex = 0;
+
+    function clampIndex(index) {
+        return Math.max(0, Math.min(sections.length - 1, index))
+    }
+
+    function handleScroll(amount) {
+        counter += amount;
+
+        if (!animating && Math.abs(counter) >= counterThreshold) {
+            sectionIndex = clampIndex(sectionIndex + Math.sign(counter));
+            scrollTo(sections[sectionIndex]);
+        }
+    }
+
+    function handleOnWheel(event) {
+        handleScroll(-Math.sign(event.wheelDelta));
+        event.preventDefault();
+    }
+
+    function handleTouchEnd(event) {
+        console.log(event);
+        event.preventDefault();
+    }
+
+    function scrollTo(target) {
+        animating = true;
+        target.scrollIntoView({behavior: 'smooth', alignToTop: true})
+        setTimeout(() => {
+            animating = false;
+            counter = 0;
+        }, resetDuration)
+    }
+
+    document.addEventListener('wheel', handleOnWheel, { passive: false });
+    document.addEventListener('touchend', handleTouchEnd, { passive: false })
+
+
+}
+
 window.onload = function () {
+    initScroller()
     startTypeWriterAnimationOn(document.querySelector(".typewriter"));
 };
