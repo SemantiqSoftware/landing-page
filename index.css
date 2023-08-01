@@ -199,6 +199,15 @@ semantiq {
     }
 
     footer {
-        padding: 0 0 1em 0;
+        color: gray;
+        font-size: 0.8em;
+        display: flex;
+        flex-direction: row-reverse;
+        position: fixed;
+        bottom: 0.5em;
+    }
+
+    footer span {
+        padding: 0 0.2em 0 0.2em;
     }
 }

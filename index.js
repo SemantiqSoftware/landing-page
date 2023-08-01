@@ -77,12 +77,14 @@ function initScroller() {
 
     function handleOnWheel(event) {
         handleScroll(-Math.sign(event.wheelDelta));
+        event.preventDefault()
     }
 
     let initialTouchY;
 
     function handleTouchStart(event) {
         initialTouchY = event.touches[0].clientY;
+        event.preventDefault()
     }
 
     function handleTouchEnd(event) {
@@ -92,14 +94,18 @@ function initScroller() {
             handleScroll(Math.sign(deltaY));
         }
 
+        event.preventDefault()
+
     }
 
     function handleArrowKeys(event) {
         if (event.key == 'ArrowUp') {
             handleScroll(-1);
+            event.preventDefault()
         }
         else if (event.key == 'ArrowDown') {
             handleScroll(1);
+            event.preventDefault()
         }
     }
 
@@ -112,10 +118,10 @@ function initScroller() {
         }, resetDuration)
     }
 
-    document.addEventListener('wheel', handleOnWheel);
-    document.addEventListener('touchstart', handleTouchStart)
-    document.addEventListener('touchend', handleTouchEnd)
-    document.addEventListener('keydown', handleArrowKeys)
+    document.addEventListener('wheel', handleOnWheel, {passive: false});
+    document.addEventListener('touchstart', handleTouchStart, {passive: false})
+    document.addEventListener('touchend', handleTouchEnd, {passive: false})
+    document.addEventListener('keydown', handleArrowKeys, {passive: false})
 }
 
 window.onload = function () {
