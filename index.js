@@ -53,17 +53,78 @@ function typeWriterAnimation(textElement, texts) {
 
 function startTypeWriterAnimationOn(textElement) {
     var texts = textElement.textContent.trim().split("\n").map((s) => s.trim());
+    textElement.style.opacity = 1;
     typeWriterAnimation(textElement, texts);
 }
 
+function initScroller() {
+    const resetDuration = 600;
+    const sections = document.querySelectorAll("section");
+
+    let animating = false;
+    let sectionIndex = 0;
+
+    function clampIndex(index) {
+        return Math.max(0, Math.min(sections.length - 1, index))
+    }
+
+    function handleScroll(offset) {
+        if (!animating) {
+            sectionIndex = clampIndex(sectionIndex + offset);
+            scrollTo(sections[sectionIndex]);
+        }
+    }
+
+    function handleOnWheel(event) {
+        handleScroll(-Math.sign(event.wheelDelta));
+        event.preventDefault()
+    }
+
+    let initialTouchY;
+
+    function handleTouchStart(event) {
+        initialTouchY = event.touches[0].clientY;
+        event.preventDefault()
+    }
+
+    function handleTouchEnd(event) {
+        const deltaY = initialTouchY - event.changedTouches[0].clientY; // down = positive
+
+        if (Math.abs(deltaY) > 10) {
+            handleScroll(Math.sign(deltaY));
+        }
+
+        event.preventDefault()
+
+    }
+
+    function handleArrowKeys(event) {
+        if (event.key == 'ArrowUp') {
+            handleScroll(-1);
+            event.preventDefault()
+        }
+        else if (event.key == 'ArrowDown') {
+            handleScroll(1);
+            event.preventDefault()
+        }
+    }
+
+    function scrollTo(target) {
+        console.log(target);
+        animating = true;
+        target.scrollIntoView({behavior: 'smooth', alignToTop: true})
+        setTimeout(() => {
+            animating = false;
+        }, resetDuration)
+    }
+
+    document.addEventListener('wheel', handleOnWheel, {passive: false});
+    document.addEventListener('touchstart', handleTouchStart, {passive: false})
+    document.addEventListener('touchend', handleTouchEnd, {passive: false})
+    document.addEventListener('keydown', handleArrowKeys, {passive: false})
+}
+
 window.onload = function () {
-    var menuToggle = document.querySelector(".menu-toggle")
-    var navbarMenu = document.querySelector(".navbar-menu")
-
-    menuToggle.addEventListener("click", function () {
-        menuToggle.classList.toggle("menu-down")
-        navbarMenu.classList.toggle("menu-down")
-    })
-
+    initScroller()
     startTypeWriterAnimationOn(document.querySelector(".typewriter"));
 };

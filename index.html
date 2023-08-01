@@ -8,34 +8,75 @@
     <script src="/index.js"></script>
   </head>
   <body>
+
     <nav class="navbar">
-      <div class="logo"><a href="/">SEMANTIQ</a></div>
-      <div class="menu-toggle">☰</div>
-      <div class="navbar-menu">
-        <a class="navbar-button" href="/">Accueil</a>
-        <a class="navbar-button" href="/apropos">À propos</a>
-        <a class="navbar-button" href="/en">🌐 En</a>
-      </div>
+      <div class="logo">SEMANTIQ</div>
+      <a class="language-button" href="/en">🌐 En</a>
     </nav>
-    <div class="center">
-      <h1 class="tagline">
-        Solutions logicielles sur mesure
-      </h1>
-      <p class="typewriter">
-        Nous parlons votre langage.
-        Nos experts vous offrent des solutions clé en main.
-        Nous nous adaptons à votre équipe.
-        Des solutions durables et de qualité.
-      </p>
-      <button class="cta-button"
-              onclick="location.href='mailto:info@semantiq.software';">
-        Écrivez nous
-      </button>
+
+    <div class="sections-wrapper">
+
+      <section>
+        <h1 class="section-title">
+          Solutions logicielles sur mesure
+        </h1>
+        <span class="typewriter">
+          Nous parlons votre langage.
+          Nos experts vous offrent des solutions clé en main.
+          Nous nous adaptons à votre équipe.
+          Des solutions durables et de qualité.
+        </span>
+        <button class="cta-button"
+                onclick="location.href='mailto:info@semantiq.software';">
+          Écrivez nous
+        </button>
+      </section>
+
+      <section>
+        <h2 class="section-title">À propos</h2>
+        <p>
+          <span class="semantiq">SEMANTIQ</span>, fondée par deux chercheurs en informatique, est une entreprise IT réputée pour son expertise à tous les
+          niveaux. Notre équipe se distingue par sa capacité à s'adapter aux besoins spécifiques de chaque client et aux
+          technologies utilisées, faisant de nous un partenaire technologique de choix. Chez <span class="semantiq">SEMANTIQ</span>, nous convertissons les
+          défis en opportunités, stimulant la croissance et l'innovation à chaque étape. Votre transformation numérique est notre
+          mission.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="section-title">L'équipe</h2>
+
+          <div class="team-member">
+            <span class="profile-overview">
+              <span class="profile-pic-circle">
+                <img class="profile-pic" src="assets/dev.jpg">
+              </span>
+              <p class="profile-name">Marc-André</p>
+              <p class="profile-title">CEO</p>
+            </span>
+
+            <p class="profile-description">This is a short description for team member 1. This is a short description for team member 1. This is a short description for team member 1.</p>
+          </div>
+          
+          <div class="team-member">
+            <span class="profile-overview">
+              <span class="profile-pic-circle">
+                <img class="profile-pic" src="assets/dev.jpg">
+              </span>
+              <p class="profile-name">Olivier</p>
+              <p class="profile-title">Basic dev</p>
+            </span>
+          
+            <p class="profile-description">This is a short description for team member 2. This is a short description for team
+              member 2. This is a short description for team member 2.</p>
+          </div>
+        
+        <footer>
+          <span>&copy; 2023 <span class="semantiq">SEMANTIQ</span></span>
+          <span>info@semantiq.software</span>
+        </footer>
+      </section>
     </div>
-    <div class="footer">
-      &copy; 2023 SEMANTIQ
-      <br />
-      info@semantiq.software
-    </div>
+
   </body>
 </html>

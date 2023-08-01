@@ -8,47 +8,58 @@
         url('https://db.onlinewebfonts.com/t/98efa5745977879929f262b460749fc5.svg#FuturaPT-DemiBold') format('svg');
 }
 
-html,
-body {
-    height: 100%;
+:root {
+    --navbar-height: 7vh;
+}
+
+html, body {
     margin: 0;
-    padding: 0;
     font-family: 'FuturaPT-DemiBold', Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.sections-wrapper {
+    scroll-padding-top: var(--navbar-height);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+section {
     background: ivory;
-}
-
-.logo > a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.content {
-    font-family: Helvetica;
-    text-align: justify;
-    max-width: 768px;
-    margin: 0 auto;
-}
-
-.center {
     display: flex;
     flex-direction: column;
+    padding: 0 20% 0 20%;
+    height: 100%;
+    align-items: center;
     justify-content: center;
-    flex-grow: 1;
     text-align: center;
-    max-width: 75vw;
-    margin: 0 auto;
 }
 
-.tagline {
+section p {
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.logo {
+    text-decoration: none;
+}
+
+.section-title {
     font-size: 3.2rem;
     color: black;
+    margin-bottom: 2rem;
 }
 
 .typewriter {
-    height: 3rem;
+    opacity: 0;
+    padding-top: 3rem;
+    height: 8rem;
     overflow: visible;
     font-size: 2.2rem;
 }
@@ -65,86 +76,138 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     max-width: 300px;
-    font-family: 'FuturaPT-DemiBold', Arial, sans-serif;
 }
 
-.footer {
+footer {
+    padding-top: 8em;
+    font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
     text-align: center;
+    flex-direction: column;
+    width: 100%;
+    scroll-snap-align: end;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2rem;
-    padding: 20px;
+    padding: 0 20px 0 20px;
     background-color: midnightblue;
     color: white;
     align-items: center;
+    position: fixed;
+    height: var(--navbar-height);
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .navbar .logo {
     font-size: 2rem;
 }
 
-.navbar-button {
+.language-button {
     color: white;
     text-decoration: none;
     padding: 10px;
 }
 
-.menu-toggle {
-    display: none;
+.team-member {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 3rem;
+}
+
+.profile-overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-pic-circle {
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 6px solid midnightblue;
+}
+
+.profile-pic {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+}
+
+.profile-title {
+    margin: 0;
+}
+
+.profile-name {
+    margin: 0;
+}
+
+.profile-description {
+    margin-left: 3em;
+    width: 70%;
+}
+
+semantiq {
+    font-weight: bold;
+    font-family: 'FuturaPT-DemiBold', Arial, sans-serif;
 }
 
 @media only screen and (max-width: 768px) {
-    body {
-        padding-top: 6rem;
+    section {
+        padding: 0 2em 0 2em;
     }
 
-    .tagline {
-        font-size: 2.6rem;
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
     }
 
     .typewriter {
-        font-size: 1.6rem;
+        opacity: 0;
+        padding-top: 3rem;
+        height: 8rem;
+        overflow: visible;
+        font-size: 1.5rem;
     }
 
-    .content {
-        max-width: 500px;
+    section p {
+        font-size: 1.2rem;
+        text-align: justify;
     }
 
-    .navbar {
+    .profile-pic-circle {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
         align-items: center;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
+        width: 20vh;
+        height: 20vh;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 6px solid midnightblue;
     }
 
-    .navbar-menu {
+    .profile-description {
         display: none;
     }
 
-    .navbar-menu.menu-down {
+    footer {
+        color: gray;
+        font-size: 0.8em;
         display: flex;
-        flex-direction: column;
-        width: 100%;
-        overflow: hidden;
-        align-items: center;
+        flex-direction: row-reverse;
+        position: fixed;
+        bottom: 0.5em;
     }
 
-    .menu-toggle {
-        display: block;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        cursor: pointer;
+    footer span {
+        padding: 0 0.2em 0 0.2em;
     }
 }
