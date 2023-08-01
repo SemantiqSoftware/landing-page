@@ -58,35 +58,49 @@ function startTypeWriterAnimationOn(textElement) {
 }
 
 function initScroller() {
-    const counterThreshold = 5;
-    const resetDuration = 1000;
+    const resetDuration = 600;
     const sections = document.querySelectorAll("section");
 
     let animating = false;
-    let counter = 0;
     let sectionIndex = 0;
 
     function clampIndex(index) {
         return Math.max(0, Math.min(sections.length - 1, index))
     }
 
-    function handleScroll(amount) {
-        counter += amount;
-
-        if (!animating && Math.abs(counter) >= counterThreshold) {
-            sectionIndex = clampIndex(sectionIndex + Math.sign(counter));
+    function handleScroll(offset) {
+        if (!animating) {
+            sectionIndex = clampIndex(sectionIndex + offset);
             scrollTo(sections[sectionIndex]);
         }
     }
 
     function handleOnWheel(event) {
         handleScroll(-Math.sign(event.wheelDelta));
-        event.preventDefault();
+    }
+
+    let initialTouchY;
+
+    function handleTouchStart(event) {
+        initialTouchY = event.touches[0].clientY;
     }
 
     function handleTouchEnd(event) {
-        console.log(event);
-        event.preventDefault();
+        const deltaY = initialTouchY - event.changedTouches[0].clientY; // down = positive
+
+        if (Math.abs(deltaY) > 10) {
+            handleScroll(Math.sign(deltaY));
+        }
+
+    }
+
+    function handleArrowKeys(event) {
+        if (event.key == 'ArrowUp') {
+            handleScroll(-1);
+        }
+        else if (event.key == 'ArrowDown') {
+            handleScroll(1);
+        }
     }
 
     function scrollTo(target) {
@@ -94,14 +108,13 @@ function initScroller() {
         target.scrollIntoView({behavior: 'smooth', alignToTop: true})
         setTimeout(() => {
             animating = false;
-            counter = 0;
         }, resetDuration)
     }
 
-    document.addEventListener('wheel', handleOnWheel, { passive: false });
-    document.addEventListener('touchend', handleTouchEnd, { passive: false })
-
-
+    document.addEventListener('wheel', handleOnWheel);
+    document.addEventListener('touchstart', handleTouchStart)
+    document.addEventListener('touchend', handleTouchEnd)
+    document.addEventListener('keydown', handleArrowKeys)
 }
 
 window.onload = function () {
