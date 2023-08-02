@@ -69,6 +69,11 @@ function initScroller() {
     }
 
     function handleScroll(offset) {
+        // disable scrolling capture on mobile
+        if (!window.matchMedia('only screen and (min-width: 768px)').matches) {
+            return
+        }
+
         if (!animating) {
             sectionIndex = clampIndex(sectionIndex + offset);
             scrollTo(sections[sectionIndex]);
@@ -106,7 +111,6 @@ function initScroller() {
     }
 
     function scrollTo(target) {
-        console.log(target);
         animating = true;
         target.scrollIntoView({behavior: 'smooth', alignToTop: true})
         setTimeout(() => {
@@ -124,6 +128,6 @@ function initScroller() {
 document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
 
 window.onload = function () {
-    initScroller()
+    // initScroller()
     startTypeWriterAnimationOn(document.querySelector(".typewriter"));
 };
