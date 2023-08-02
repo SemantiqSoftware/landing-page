@@ -110,6 +110,7 @@ footer {
 }
 
 .language-button {
+    display: none; /* TODO: remove when en site ready */
     color: white;
     text-decoration: none;
     padding: 10px;
