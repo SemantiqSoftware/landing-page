@@ -190,12 +190,12 @@ semantiq {
 
 @media only screen and (max-width: 768px) {
     html, body {
-        overflow: visible;
+        overflow: scroll;
     }
 
     .sections-wrapper {
         height: none;
-        overflow: scroll;
+        overflow: visible;
     }
 
     section {
