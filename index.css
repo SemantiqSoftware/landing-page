@@ -190,16 +190,15 @@ semantiq {
 
 @media only screen and (max-width: 768px) {
     .sections-wrapper {
-        height: calc(100vh - var(--navbar-height));
-        height: calc(var(--vh) * 100 - var(--navbar-height));
+        height: none;
+        overflow: scroll;
     }
 
     section {
         padding: 1em 2em 1em 2em;
         font-size: 1.1rem;
-        justify-content: flex-start;
         height: calc(100vh - var(--navbar-height));
-        height: calc(var(--vh) * 100 - var(--navbar-height));
+        overflow: visible;
     }
 
     .section-title {

@@ -69,6 +69,11 @@ function initScroller() {
     }
 
     function handleScroll(offset) {
+        let sectionsStyle = window.getComputedStyle(document.querySelector('.sections-wrapper'));
+        if (sectionsStyle.overflow === 'scroll') {
+            return
+        }
+
         if (!animating) {
             sectionIndex = clampIndex(sectionIndex + offset);
             scrollTo(sections[sectionIndex]);
@@ -106,7 +111,6 @@ function initScroller() {
     }
 
     function scrollTo(target) {
-        console.log(target);
         animating = true;
         target.scrollIntoView({behavior: 'smooth', alignToTop: true})
         setTimeout(() => {
