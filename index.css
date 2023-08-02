@@ -16,7 +16,6 @@ html,
 body {
     margin: 0;
     font-family: 'FuturaPT-DemiBold', Arial, sans-serif;
-    overflow: hidden;
     background: ivory;
 }
 
@@ -29,23 +28,18 @@ body {
     margin-top: var(--navbar-height);
     width: 100%;
     height: calc(100vh - var(--navbar-height));
-    overflow: hidden;
+    overflow: scroll;
 }
 
 section {
     display: flex;
     flex-direction: column;
     padding: 0 20% 0 20%;
-    height: calc(100vh - var(--navbar-height));
+    min-height: calc(100vh - var(--navbar-height));
     align-items: center;
     justify-content: space-evenly;
     text-align: center;
     font-size: 1.5rem;
-    overflow: hidden;
-}
-
-section:nth-child(2n) {
-    background-color: white;
 }
 
 section p {
@@ -113,7 +107,6 @@ footer {
     text-align: center;
     flex-direction: column;
     width: 100%;
-    scroll-snap-align: end;
 }
 
 .navbar {

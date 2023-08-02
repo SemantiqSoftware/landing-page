@@ -128,6 +128,6 @@ function initScroller() {
 document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
 
 window.onload = function () {
-    initScroller()
+    // initScroller()
     startTypeWriterAnimationOn(document.querySelector(".typewriter"));
 };
