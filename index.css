@@ -17,6 +17,7 @@ body {
     margin: 0;
     font-family: 'FuturaPT-DemiBold', Arial, sans-serif;
     overflow: hidden;
+    background: ivory;
 }
 
 ::-webkit-scrollbar {
@@ -25,26 +26,46 @@ body {
 }
 
 .sections-wrapper {
-    scroll-padding-top: var(--navbar-height);
+    margin-top: var(--navbar-height);
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - var(--navbar-height));
     overflow: hidden;
 }
 
 section {
-    background: ivory;
     display: flex;
     flex-direction: column;
     padding: 0 20% 0 20%;
-    height: 100%;
+    height: calc(100vh - var(--navbar-height));
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: center;
+    font-size: 1.5rem;
+    overflow: hidden;
 }
 
 section p {
-    font-size: 1.5rem;
     text-align: justify;
+}
+
+section ol {
+    padding: 0;
+}
+
+section li {
+    font-size: 1.8rem;
+    list-style-position: inside;
+}
+
+li:not(:last-child):after {
+    content: "➩";
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    color: midnightblue;
+    transform: rotate(90deg);
+    font-size: 2em;
 }
 
 .logo {
@@ -168,8 +189,17 @@ semantiq {
 }
 
 @media only screen and (max-width: 768px) {
+    .sections-wrapper {
+        height: calc(100vh - var(--navbar-height));
+        height: calc(var(--vh) * 100 - var(--navbar-height));
+    }
+
     section {
-        padding: 0 2em 0 2em;
+        padding: 1em 2em 1em 2em;
+        font-size: 1.1rem;
+        justify-content: flex-start;
+        height: calc(100vh - var(--navbar-height));
+        height: calc(var(--vh) * 100 - var(--navbar-height));
     }
 
     .section-title {
@@ -186,8 +216,12 @@ semantiq {
     }
 
     section p {
-        font-size: 1.2rem;
         text-align: justify;
+    }
+
+    section li {
+        font-size: 1.2rem;
+        list-style-position: inside;
     }
 
     .profile-pic-circle {

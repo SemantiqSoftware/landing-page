@@ -84,7 +84,6 @@ function initScroller() {
 
     function handleTouchStart(event) {
         initialTouchY = event.touches[0].clientY;
-        event.preventDefault()
     }
 
     function handleTouchEnd(event) {
@@ -93,9 +92,6 @@ function initScroller() {
         if (Math.abs(deltaY) > 10) {
             handleScroll(Math.sign(deltaY));
         }
-
-        event.preventDefault()
-
     }
 
     function handleArrowKeys(event) {
@@ -123,6 +119,9 @@ function initScroller() {
     document.addEventListener('touchend', handleTouchEnd, {passive: false})
     document.addEventListener('keydown', handleArrowKeys, {passive: false})
 }
+
+// compute and store section height on mobile
+document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
 
 window.onload = function () {
     initScroller()
