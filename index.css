@@ -44,6 +44,10 @@ section {
     overflow: hidden;
 }
 
+section:nth-child(2n) {
+    background-color: white;
+}
+
 section p {
     text-align: justify;
 }
