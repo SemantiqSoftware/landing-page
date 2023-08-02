@@ -9,10 +9,11 @@
 }
 
 :root {
-    --navbar-height: 7vh;
+    --navbar-height: 9vh;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     font-family: 'FuturaPT-DemiBold', Arial, sans-serif;
     overflow: hidden;
@@ -109,6 +110,7 @@ footer {
 }
 
 .language-button {
+    display: none; /* TODO: remove when en site ready */
     color: white;
     text-decoration: none;
     padding: 10px;
@@ -145,10 +147,14 @@ footer {
 
 .profile-title {
     margin: 0;
+    font-size: 1em;
+    white-space: nowrap;
 }
 
 .profile-name {
     margin: 0;
+    font-size: 1.5em;
+    white-space: nowrap;
 }
 
 .profile-description {
