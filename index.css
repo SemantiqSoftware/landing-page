@@ -189,6 +189,10 @@ semantiq {
 }
 
 @media only screen and (max-width: 768px) {
+    body {
+        overflow: visible;
+    }
+
     .sections-wrapper {
         height: none;
         overflow: scroll;
