@@ -242,8 +242,6 @@ semantiq {
         font-size: 0.8em;
         display: flex;
         flex-direction: row-reverse;
-        position: fixed;
-        bottom: 0.5em;
     }
 
     footer span {
