@@ -198,6 +198,7 @@ semantiq {
     }
 
     .sections-wrapper {
+        margin-top: 0;
         height: fit-content;
         overflow: visible;
     }
