@@ -1,0 +1,225 @@
+@font-face {
+    font-family: 'FuturaPT-DemiBold';
+    src: url('https://db.onlinewebfonts.com/t/98efa5745977879929f262b460749fc5.eot');
+    src: url('https://db.onlinewebfonts.com/t/98efa5745977879929f262b460749fc5.eot?#iefix') format('embedded-opentype'),
+        url('https://db.onlinewebfonts.com/t/98efa5745977879929f262b460749fc5.woff2') format('woff2'),
+        url('https://db.onlinewebfonts.com/t/98efa5745977879929f262b460749fc5.woff') format('woff'),
+        url('https://db.onlinewebfonts.com/t/98efa5745977879929f262b460749fc5.ttf') format('truetype'),
+        url('https://db.onlinewebfonts.com/t/98efa5745977879929f262b460749fc5.svg#FuturaPT-DemiBold') format('svg');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 75vw;
+    margin: 40px auto;
+    padding: 0 10px;
+    font: 18px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: #444;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    max-width: 300px;
+}
+
+header {
+    min-width: 100%;
+}
+
+nav {
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.left {
+    flex-basis: 33.33%;
+}
+
+.right {
+    flex-basis: 66.66%;
+}
+
+p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-top: 60px;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+ol > li {
+    list-style-position: inside;
+    margin-bottom: 20px;
+}
+
+li::marker {
+  color: black;
+  font-size: 1.6rem;
+}
+
+.content {
+    max-width: 768px;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 3rem;
+}
+
+.profile-overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-pic-circle {
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 6px solid black;
+}
+
+.profile-pic {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+}
+
+.profile-title {
+    margin: 0;
+    font-size: 1em;
+    white-space: nowrap;
+}
+
+.profile-name {
+    margin: 0;
+    font-size: 1.5em;
+    white-space: nowrap;
+}
+
+.profile-description {
+    margin-left: 3em;
+    width: 70%;
+}
+
+.logo {
+    color: black;
+    font-size: 2rem;
+    font-family: 'FuturaPT-DemiBold', Arial, sans-serif;
+}
+
+.logo > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.semantiq {
+    font-size: inherit;
+    color: black;
+    font-family: 'FuturaPT-DemiBold', Arial, sans-serif;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 1024px) {
+    body {
+        max-width: 700px;
+    }
+
+    section {
+        flex-direction: column;
+    }
+
+    ol > li {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        margin: 20px auto;
+        font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        /* line-height: 1.3; */
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    ol > li {
+        margin-bottom: 30px;
+    }
+
+    li::marker {
+        font-size: 1.3rem;
+    }
+
+    .team-member {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+    }
+
+    .profile-title {
+        margin: 0;
+        font-size: 1em;
+        white-space: nowrap;
+    }
+
+    .profile-name {
+        margin: 0;
+        font-size: 1.5em;
+        white-space: nowrap;
+    }
+
+    .profile-description {
+        margin: 0 auto;
+        width: 100%;
+    }
+}
