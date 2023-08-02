@@ -190,18 +190,22 @@ semantiq {
 
 @media only screen and (max-width: 768px) {
     html, body {
-        overflow: scroll;
+        overflow: visible;
+    }
+
+    .navbar {
+        position: relative;
     }
 
     .sections-wrapper {
-        height: none;
+        height: fit-content;
         overflow: visible;
     }
 
     section {
         padding: 1em 2em 1em 2em;
         font-size: 1.1rem;
-        height: none;
+        height: unset;
         min-height: calc(100vh - var(--navbar-height));
         overflow: visible;
     }
