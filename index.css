@@ -197,7 +197,8 @@ semantiq {
     section {
         padding: 1em 2em 1em 2em;
         font-size: 1.1rem;
-        height: calc(100vh - var(--navbar-height));
+        height: none;
+        min-height: calc(100vh - var(--navbar-height));
         overflow: visible;
     }
 
