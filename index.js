@@ -69,8 +69,8 @@ function initScroller() {
     }
 
     function handleScroll(offset) {
-        let sectionsStyle = window.getComputedStyle(document.querySelector('.sections-wrapper'));
-        if (sectionsStyle.overflow === 'scroll') {
+        // disable scrolling capture on mobile
+        if (!window.matchMedia('only screen and (min-width: 768px)').matches) {
             return
         }
 
