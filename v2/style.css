@@ -32,12 +32,13 @@ h3 {
     background-color: black;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 8px 20px;
     text-align: center;
     text-decoration: none;
     font-size: 1.2rem;
     cursor: pointer;
     max-width: 300px;
+    border-radius: 5px;
 }
 
 header {
@@ -221,5 +222,9 @@ a {
     .profile-description {
         margin: 0 auto;
         width: 100%;
+    }
+
+    .cta-button {
+        font-size: 0.8rem;
     }
 }
