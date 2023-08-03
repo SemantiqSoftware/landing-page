@@ -80,7 +80,7 @@ header .language-button {
     cursor: pointer;
     border-radius: 5px;
     align-self: center;
-    width: 80%;
+    width: 100%;
     min-height: 6rem;
 }
 
