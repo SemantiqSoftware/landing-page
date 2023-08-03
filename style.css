@@ -52,6 +52,7 @@ header .logo {
 header .tagline {
     grid-column: span 2;
     grid-row: 2;
+    font-size: 1.2rem;
 }
 
 header .language-button {
@@ -60,7 +61,7 @@ header .language-button {
     color: #444444;
     grid-column: 2;
     grid-row: 1;
-    align-self: start;
+    align-self: center;
     justify-self: end;
 }
 
@@ -178,7 +179,7 @@ ol li::before {
 
 .logo {
     color: black;
-    font-size: 2rem;
+    font-size: 3rem;
     font-family: 'FuturaPT-DemiBold', Arial, sans-serif;
 }
 
@@ -225,12 +226,16 @@ a {
         font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     }
 
+    header .tagline {
+        font-size: 1rem;
+    }
+
     h2 {
         align-self: center;
     }
 
     .logo {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     h1 {
